@@ -23,10 +23,18 @@ export function SiteFooter() {
         </div>
         <div className="text-sm text-muted-foreground">
           <p className="mb-3 font-semibold uppercase tracking-widest text-foreground">Horário</p>
-          <p className="flex gap-2">
+          <div className="flex gap-2">
             <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-            Fechado agora · Abre sáb. às 08:30
-          </p>
+            <ul className="space-y-1">
+              {horarios.map((h) => (
+                <li key={h.dia} className="flex justify-between gap-4">
+                  <span>{h.dia}</span>
+                  <span className="text-right text-foreground/80">{h.periodos.join(" · ")}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <p className="mt-2 pl-6 text-xs">Os horários podem ser diferentes em feriados.</p>
         </div>
         <div className="text-sm text-muted-foreground">
           <p className="mb-3 font-semibold uppercase tracking-widest text-foreground">Fale conosco</p>
