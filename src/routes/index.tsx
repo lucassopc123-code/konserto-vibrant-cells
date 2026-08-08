@@ -117,7 +117,8 @@ export default function Home() {
           <div>
             <h2 className="text-3xl">Av. Borges de Medeiros — Carolina, Santa Maria/RS</h2>
             <p className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
-              <Clock className="h-4 w-4 text-primary" /> Fechado · Abre sáb. às 08:30
+              <Clock className="h-4 w-4 text-primary" /> Seg–Sex 08:30–11:30 e 14:00–18:00 · Sáb
+              08:30–12:00 · Dom fechado
             </p>
           </div>
           <a
