@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Clock, Facebook, Navigation } from "lucide-react";
+import { horarios } from "@/lib/horarios";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
