@@ -1,4 +1,5 @@
 import { MapPin, Phone, Clock, Facebook } from "lucide-react";
+import { horarios } from "@/lib/horarios";
 
 export function SiteFooter() {
   return (
