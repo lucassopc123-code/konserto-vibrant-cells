@@ -36,7 +36,6 @@ export default function Contato() {
               d: "Av. Borges de Medeiros — Carolina, Santa Maria - RS, 97010-081 (85CG+82 Carolina)",
             },
             { icon: Phone, t: "Telefone", d: "(55) 99206-6699" },
-            { icon: Clock, t: "Horário", d: "Fechado agora · Abre sábado às 08:30" },
             { icon: Facebook, t: "Redes", d: "facebook.com" },
           ].map(({ icon: Icon, t, d }) => (
             <div key={t} className="flex gap-4 rounded-xl border border-border bg-card p-6">
@@ -47,6 +46,36 @@ export default function Contato() {
               </div>
             </div>
           ))}
+
+          <div className="flex gap-4 rounded-xl border border-border bg-card p-6">
+            <Clock className="mt-1 h-5 w-5 shrink-0 text-primary" />
+            <div className="w-full">
+              <h2 className="text-xl">Horário de funcionamento</h2>
+              <ul className="mt-3 divide-y divide-border/60 text-sm">
+                {horarios.map((h) => (
+                  <li key={h.dia} className="flex items-start justify-between gap-4 py-2">
+                    <span className="text-muted-foreground">
+                      {h.dia}
+                      {h.nota && (
+                        <span className="block text-xs text-primary">({h.nota})</span>
+                      )}
+                    </span>
+                    <span className="text-right">
+                      {h.periodos.map((p) => (
+                        <span key={p} className="block">
+                          {p}
+                        </span>
+                      ))}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-3 text-xs text-muted-foreground">
+                Os horários podem ser diferentes em feriados.
+              </p>
+            </div>
+          </div>
+
           <a
             href="https://www.google.com/maps/search/?api=1&query=Konserto+Cellular+Santa+Maria+RS"
             target="_blank"
